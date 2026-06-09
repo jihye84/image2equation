@@ -596,7 +596,7 @@ const CompareMode = ({ onNext, isMix }) => {
             </div>
           ))}
 
-          {showAnswer && Array.from({ length: minCount }).map((_, i) => (
+          {Array.from({ length: minCount }).map((_, i) => (
             <div key={`line-${i}`} className="flex justify-center items-center z-10 w-full h-full pointer-events-none" style={{ gridRowStart: 1, gridRowEnd: 4, gridColumnStart: i + 1 }}>
               <div className="w-1 sm:w-1.5 md:w-2 h-[65%] bg-pink-500 animate-draw-line origin-top rounded-full" style={{ animationDelay: `${i * 0.1}s` }} />
             </div>
