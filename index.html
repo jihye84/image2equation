@@ -587,7 +587,7 @@ const CompareMode = ({ onNext, isMix }) => {
           <div className="row-start-3 col-start-1 border-[2px] md:border-[4px] border-[#c5e1a5] bg-white rounded-2xl md:rounded-3xl shadow-sm z-0 w-full h-full" style={{ gridColumnEnd: bottomCount + 1 }} />
 
           {Array.from({ length: topCount }).map((_, i) => (
-            <div key={`top-${i}`} className="row-start-1 flex justify-center items-center p-1 sm:p-2 md:p-3 z-10 w-full h-full" style={{ gridColumnStart: i + 1 }}>
+            <div key={`top-${i}`} className="row-start-1 flex justify-center items-center p-1 sm:p-2 md:p-3 z-20 w-full h-full" style={{ gridColumnStart: i + 1 }}>
               <div className={`animate-pop-in ${showAnswer && isTopGreater && i >= minCount ? 'animate-bounce-happy' : ''}`} style={{ animationDelay: `${i * 0.05}s` }}>
                 {theme === 'tomato' && <TomatoGraphic colorType={topType} />}
                 {theme === 'melon' && <MelonGraphic colorType={topType} />}
@@ -597,13 +597,13 @@ const CompareMode = ({ onNext, isMix }) => {
           ))}
 
           {showAnswer && Array.from({ length: minCount }).map((_, i) => (
-            <div key={`line-${i}`} className="row-start-2 flex justify-center items-center z-20 w-full h-full" style={{ gridColumnStart: i + 1 }}>
-              <div className="w-1 sm:w-1.5 md:w-2 h-full bg-pink-500 animate-draw-line origin-top" style={{ animationDelay: `${i * 0.1}s` }} />
+            <div key={`line-${i}`} className="flex justify-center items-center z-10 w-full h-full pointer-events-none" style={{ gridRowStart: 1, gridRowEnd: 4, gridColumnStart: i + 1 }}>
+              <div className="w-1 sm:w-1.5 md:w-2 h-[65%] bg-pink-500 animate-draw-line origin-top rounded-full" style={{ animationDelay: `${i * 0.1}s` }} />
             </div>
           ))}
 
           {Array.from({ length: bottomCount }).map((_, i) => (
-            <div key={`bottom-${i}`} className="row-start-3 flex justify-center items-center p-1 sm:p-2 md:p-3 z-10 w-full h-full" style={{ gridColumnStart: i + 1 }}>
+            <div key={`bottom-${i}`} className="row-start-3 flex justify-center items-center p-1 sm:p-2 md:p-3 z-20 w-full h-full" style={{ gridColumnStart: i + 1 }}>
               <div className={`animate-pop-in ${showAnswer && !isTopGreater && i >= minCount ? 'animate-bounce-happy' : ''}`} style={{ animationDelay: `${i * 0.05}s` }}>
                 {theme === 'tomato' && <TomatoGraphic colorType={bottomType} />}
                 {theme === 'melon' && <MelonGraphic colorType={bottomType} />}
